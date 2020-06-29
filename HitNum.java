@@ -3,6 +3,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 
+//変更部分
+
 public class HitNum {
     public static void main(String[] args) {
         HitNum hitnum = new HitNum();
