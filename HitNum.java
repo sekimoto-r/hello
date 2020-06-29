@@ -3,7 +3,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Random;
 
-//変更部分
 
 public class HitNum {
     public static void main(String[] args) {
@@ -13,11 +12,11 @@ public class HitNum {
     }
 
     public void game() {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        Random rand = new Random();
-        int np = rand.nextInt(10) + rand.nextInt(10) * 10;
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));//バッファードリーダー
+        Random rand = new Random();//乱数クラスのインスタンシエーション
+        int np = rand.nextInt(90) + 10;//コンピュータが設定した整数
         String line;
-        int nu = 0;
+        int nu = 0;//ユーザが入力した数字
         for (int i = 0; i < 5; i++) {
             System.out.println("数字を入力してください");
             if(i==0){
@@ -29,15 +28,15 @@ public class HitNum {
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
-            int dif = np - nu;
+            int dif = np - nu;//差分
             if (dif == 0) {
                 System.out.println("当たり");
                 break;
-            }else if(dif>=20){
+            }else if(dif>=20){//20以上なら表示する
                 System.out.println("それより20以上大きいです");
             }else if(dif>0){
                 System.out.println("それよりは大きいです");
-            }else if(dif<=20){
+            }else if(dif<=20){//20以下でも表示する
                 System.out.println("それより20以上小さいです");
             }else if(dif<0){
                 System.out.println("それより小さいです");
